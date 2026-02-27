@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주차 현황</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        /* 헤더 스타일 */
+        #header {
+            width: 1520px;
+            height: 150px;
+            background-color: #B9A391;
+            position: relative;
+            box-sizing: border-box;
+            margin: 0 auto; /* 화면 가운데로 정렬 */
+        }
+
+        #logo {
+            font-size: 40px;
+            font-weight: bold;
+            color: #FDF5E6;
+            position: absolute;
+            top: 40px;
+            left: 60px;
+        }
+
+        #main_menu {
+            display: flex;
+            list-style-type: none;
+            position: absolute;
+            top: 100px; /* 로고 밑에 위치하도록 조정 */
+            left: 60px;
+        }
+
+        #main_menu li {
+            margin-right: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #FDF5E6;
+            font-size: 17px;
+        }
+
+        h1 {
+            margin-left: 50px;
+            margin-top: 30px;  /* 제목 위쪽 간격을 더 줄여서 위로 올림 */
+            font-size: 30px; /* 제목 크기 조정 */
+        }
+
+        #parking-status-container {
+            display: flex;
+            flex-direction: row; /* 왼쪽과 오른쪽을 가로로 배치 */
+            justify-content: space-between;
+            margin-top: 40px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        /* 주차 현황 왼쪽 영역 */
+        .parking-info-left {
+            width: 45%;  /* 왼쪽 정보 영역 */
+        }
+
+        .parking-zone-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 35px; /* 각 주차 구역 간 간격을 더 띄움 */
+            gap: 20px; /* 각 항목 사이에 간격을 좀 더 넓힘 */
+        }
+
+        .parking-zone {
+            width: 240px;  /* 네모칸 너비를 조금 줄임 */
+            height: 80px; /* 네모칸 높이를 줄여서 공간 절약 */
+            padding: 5px;  /* 내부 간격을 줄임 */
+            background-color: #FFFFFF;
+            border: 2px solid #B9A391;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between; /* 두 부분을 왼쪽, 오른쪽으로 나누기 */
+            cursor: pointer;
+        }
+
+        .zone-left, .zone-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+            width: 50%; /* 각 영역을 절반씩 차지 */
+        }
+
+        .zone-left {
+            border-right: 2px solid #B9A391; /* 왼쪽과 오른쪽을 구분 */
+        }
+
+        .zone-label {
+            font-size: 18px;  /* 글자 크기를 조금 줄임 */
+            font-weight: bold;
+            color: #333;
+        }
+
+        .zone-info {
+            font-size: 12px;  /* 글자 크기를 더 줄임 */
+            color: #666;
+        }
+
+        .zone-info + .zone-info {
+            margin-top: 2px;  /* 간격을 더 좁힘 */
+        }
+
+        .congestion-status {
+            font-weight: bold;
+            font-size: 13px;  /* 글자 크기를 줄임 */
+        }
+
+        .status {
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* 혼잡도 상태별 색상 */
+        .crowded {
+            color: #ff4444; /* 빨강 */
+        }
+
+        .normal {
+            color: #ffbb33; /* 노랑 */
+        }
+
+        .smooth {
+            color: #44bb44; /* 초록 */
+        }
+
+        /* 주차장 지도 스타일 (오른쪽 영역) */
+        .parking-map {
+            width: 45%;  /* 오른쪽 지도 영역 */
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5개의 열로 구성 */
+            gap: 10px;
+            display: none; /* 처음에는 지도 숨김 */
+        }
+
+        .parking-space {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            background-color: #ddd; /* 기본 색상은 회색 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+            font-size: 18px;
+        }
+
+        /* LED 표시 색상 */
+        .occupied {
+            background-color: #ff4444; /* 차량이 있는 곳은 빨간색 */
+        }
+
+        .available {
+            background-color: #44bb44; /* 차량이 없는 곳은 초록색 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <div id="header">
+        <div id="logo">Park-Flow</div>
+        <ul id="main_menu">
+            <li><a href="주차 현황.html">주차 현황</a></li>
+            <li><a href="예약.html">예약</a></li>
+            <li><a href="대체경로.html">대체 경로</a></li>
+        </ul>
+    </div>
+
+    <!-- 주차 현황 -->
+    <h1>주차 현황</h1>
+    <div id="parking-status-container">
+        <!-- 왼쪽: 주차 구역 정보 -->
+        <div class="parking-info-left">
+            <div class="parking-zone-wrapper" onclick="showParkingMap('B1')">
+                <div class="zone-label">B1</div>
+                <div class="parking-zone">
+                    <div class="zone-left">
+                        <div class="zone-info">잔여 주차: 5대</div>
+                    </div>
+                    <div class="zone-right">
+                        <div class="zone-info">혼잡도: <span class="congestion-status crowded">혼잡</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="parking-zone-wrapper" onclick="showParkingMap('B2')">
+                <div class="zone-label">B2</div>
+                <div class="parking-zone">
+                    <div class="zone-left">
+                        <div class="zone-info">잔여 주차: 8대</div>
+                    </div>
+                    <div class="zone-right">
+                        <div class="zone-info">혼잡도: <span class="congestion-status normal">보통</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="parking-zone-wrapper" onclick="showParkingMap('B3')">
+                <div class="zone-label">B3</div>
+                <div class="parking-zone">
+                    <div class="zone-left">
+                        <div class="zone-info">잔여 주차: 12대</div>
+                    </div>
+                    <div class="zone-right">
+                        <div class="zone-info">혼잡도: <span class="congestion-status smooth">원활</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 오른쪽: 주차장 지도 -->
+        <div class="parking-map" id="parking-map-B1">
+            <div class="parking-space available">B1-1</div>
+            <div class="parking-space occupied">B1-2</div>
+            <div class="parking-space available">B1-3</div>
+            <div class="parking-space occupied">B1-4</div>
+            <div class="parking-space available">B1-5</div>
+            <div class="parking-space available">B1-6</div>
+            <div class="parking-space occupied">B1-7</div>
+            <div class="parking-space available">B1-8</div>
+            <div class="parking-space occupied">B1-9</div>
+            <div class="parking-space available">B1-10</div>
+            <div class="parking-space available">B1-11</div>
+            <div class="parking-space occupied">B1-12</div>
+            <div class="parking-space available">B1-13</div>
+            <div class="parking-space occupied">B1-14</div>
+            <div class="parking-space available">B1-15</div>
+        </div>
+
+        <div class="parking-map" id="parking-map-B2">
+            <div class="parking-space occupied">B2-1</div>
+            <div class="parking-space available">B2-2</div>
+            <div class="parking-space occupied">B2-3</div>
+            <div class="parking-space available">B2-4</div>
+            <div class="parking-space occupied">B2-5</div>
+            <div class="parking-space available">B2-6</div>
+            <div class="parking-space available">B2-7</div>
+            <div class="parking-space occupied">B2-8</div>
+            <div class="parking-space available">B2-9</div>
+            <div class="parking-space available">B2-10</div>
+            <div class="parking-space available">B2-11</div>
+            <div class="parking-space occupied">B2-12</div>
+            <div class="parking-space available">B2-13</div>
+            <div class="parking-space available">B2-14</div>
+            <div class="parking-space available">B2-15</div>
+        </div>
+
+        <div class="parking-map" id="parking-map-B3">
+            <div class="parking-space available">B3-1</div>
+            <div class="parking-space occupied">B3-2</div>
+            <div class="parking-space available">B3-3</div>
+            <div class="parking-space available">B3-4</div>
+            <div class="parking-space occupied">B3-5</div>
+            <div class="parking-space available">B3-6</div>
+            <div class="parking-space occupied">B3-7</div>
+            <div class="parking-space available">B3-8</div>
+            <div class="parking-space occupied">B3-9</div>
+            <div class="parking-space available">B3-10</div>
+            <div class="parking-space available">B3-11</div>
+            <div class="parking-space occupied">B3-12</div>
+            <div class="parking-space available">B3-13</div>
+            <div class="parking-space available">B3-14</div>
+            <div class="parking-space available">B3-15</div>
+        </div>
+    </div>
+
+    <script>
+        // 주차 구역 표시 함수
+        function showParkingMap(zone) {
+            const allMaps = document.querySelectorAll('.parking-map');
+            allMaps.forEach(map => map.style.display = 'none');  // 모든 지도 숨기기
+            const selectedMap = document.getElementById(`parking-map-${zone}`);
+            if (selectedMap) selectedMap.style.display = 'grid';  // 선택된 지도만 보이기
+        }
+
+        // 페이지 로드 시 B1 구역 기본 표시
+        window.onload = function() {
+            showParkingMap('B1');
+        };
+    </script>
+</body>
+</html>

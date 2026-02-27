@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>Park-Flow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #iframe-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            max-width: 1520px;
+            max-height: 800px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="iframe-container">
+        <iframe id="parking-frame" src="주차 현황.html" title="주차 현황" onload="initializeParkingMap()"></iframe>
+    </div>
+
+    <script>
+        // iframe 로드 후 B1 구역 자동 표시
+        function initializeParkingMap() {
+            const iframe = document.getElementById('parking-frame');
+            const iframeWindow = iframe.contentWindow;
+            iframeWindow.showParkingMap('B1');
+        }
+    </script>
+</body>
+</html>

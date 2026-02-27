@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주차 현황</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #ffffff;  /* 배경색을 흰색으로 설정 */
+        }
+
+        h1 {
+            margin-left: 50px;  /* 제목을 오른쪽으로 50px 이동 */
+        }
+
+        #parking-status-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 20px;
+            margin-left: 50px;  /* 전체 주차 현황을 오른쪽으로 50px 이동 */
+        }
+
+        .parking-zone-wrapper {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;  /* 위아래 간격을 넓히기 위해 margin을 20px로 설정 */
+        }
+
+        .parking-zone {
+            width: 270px;  /* 네모칸 너비를 줄임 */
+            height: 110px;  /* 네모칸 높이를 줄임 */
+            padding: 5px;  /* padding을 줄여서 내부 간격을 좁힘 */
+            background-color: #FFFFFF;
+            border: 2px solid #B9A391;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;  /* 요소들 간의 간격을 고르게 분배 */
+        }
+
+        .zone-label {
+            margin-right: 20px;
+            font-size: 20px;  /* 층 이름의 폰트 크기를 조금 작게 설정 */
+            font-weight: bold;
+            color: #333;
+        }
+
+        .zone-info {
+            font-size: 13px;  /* 글자 크기를 좀 더 작게 설정 */
+            color: #666;
+        }
+
+        .zone-info + .zone-info {
+            margin-top: 3px;  /* 잔여 주차와 혼잡도 간의 간격을 좁히기 위해 margin-top을 3px로 설정 */
+        }
+
+        .congestion-status {
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .status {
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .crowded {
+            background-color: #ff4444;
+        }
+
+        .normal {
+            background-color: #ffbb33;
+        }
+
+        .smooth {
+            background-color: #44bb44;
+        }
+    </style>
+</head>
+<body>
+    <h1>주차 현황</h1> <!-- 제목을 오른쪽으로 50px 이동 -->
+    <div id="parking-status-container">
+        <div class="parking-zone-wrapper">
+            <div class="zone-label">B1</div>  <!-- 층 이름을 왼쪽에 배치 -->
+            <div class="parking-zone">
+                <h3>B1</h3>
+                <div class="zone-info">잔여 주차: 5대</div>
+                <div class="zone-info">혼잡도: <span class="congestion-status crowded">혼잡</span></div>
+            </div>
+        </div>
+
+        <div class="parking-zone-wrapper">
+            <div class="zone-label">B2</div>  <!-- 층 이름을 왼쪽에 배치 -->
+            <div class="parking-zone">
+                <h3>B2</h3>
+                <div class="zone-info">잔여 주차: 8대</div>
+                <div class="zone-info">혼잡도: <span class="congestion-status normal">보통</span></div>
+            </div>
+        </div>
+
+        <div class="parking-zone-wrapper">
+            <div class="zone-label">B3</div>  <!-- 층 이름을 왼쪽에 배치 -->
+            <div class="parking-zone">
+                <h3>B3</h3>
+                <div class="zone-info">잔여 주차: 12대</div>
+                <div class="zone-info">혼잡도: <span class="congestion-status smooth">원활</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
