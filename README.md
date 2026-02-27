@@ -24,7 +24,7 @@
 ![Web2](https://github.com/ChaeEun0112/Capstone/blob/main/Web2.jpg)
 ![Web3](https://github.com/ChaeEun0112/Capstone/blob/main/Web3.jpg)
 ![Web4](https://github.com/ChaeEun0112/Capstone/blob/main/Web4.jpg)
-## 문서
+## ✒️문서
 > Notion
 
 https://www.notion.so/Capstone-1661453ed8f080b08cf6d7f45327a261?source=copy_link
