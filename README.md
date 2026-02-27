@@ -1,6 +1,8 @@
 # 🚘Capstone - 스마트 주차 관리 시스템
 > 개발 기간 : 2024.11 ~ 2024.12
-![Capstone]()
+![Capstone](https://github.com/ChaeEun0112/Capstone/blob/main/Capstone.jpg)
+## 🧑‍🤝‍🧑팀원
+![Team](https://github.com/ChaeEun0112/Capstone/blob/main/Team.jpg)
 ## 문서
 > Notion
 
