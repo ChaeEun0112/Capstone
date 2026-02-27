@@ -10,7 +10,7 @@
 ![Diagram](https://github.com/ChaeEun0112/Capstone/blob/main/Diagram.jpg)
 ## 🚗주요 기능
 ![Function](https://github.com/ChaeEun0112/Capstone/blob/main/Function.jpg)
-## 💻 
+## 💻 동작 절차
 - Arduino
 ![Arduino](https://github.com/ChaeEun0112/Capstone/blob/main/Arduino.jpg)
 - MQTT
