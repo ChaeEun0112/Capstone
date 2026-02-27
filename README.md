@@ -15,6 +15,8 @@
 ![Arduino](https://github.com/ChaeEun0112/Capstone/blob/main/Arduino.jpg)
 - MQTT
 ![MQTT](https://github.com/ChaeEun0112/Capstone/blob/main/MQTT.jpg)
+- Nodejs
+![Nodejs](https://github.com/ChaeEun0112/Capstone/blob/main/Nodejs.jpg)
 - MongoDB
 ![MongoDB](https://github.com/ChaeEun0112/Capstone/blob/main/MongoDB.jpg)
 - Web
@@ -22,8 +24,6 @@
 ![Web2](https://github.com/ChaeEun0112/Capstone/blob/main/Web2.jpg)
 ![Web3](https://github.com/ChaeEun0112/Capstone/blob/main/Web3.jpg)
 ![Web4](https://github.com/ChaeEun0112/Capstone/blob/main/Web4.jpg)
--
-![Web1](https://github.com/ChaeEun0112/Capstone/blob/main/Web1.jpg)
 ## 문서
 > Notion
 
