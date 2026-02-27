@@ -21,7 +21,7 @@
 ![Web1](https://github.com/ChaeEun0112/Capstone/blob/main/Web1.jpg)
 ![Web2](https://github.com/ChaeEun0112/Capstone/blob/main/Web2.jpg)
 ![Web3](https://github.com/ChaeEun0112/Capstone/blob/main/Web3.jpg)
-!![Web4](https://github.com/ChaeEun0112/Capstone/blob/main/Web4.jpg)
+![Web4](https://github.com/ChaeEun0112/Capstone/blob/main/Web4.jpg)
 -
 ![Web1](https://github.com/ChaeEun0112/Capstone/blob/main/Web1.jpg)
 ## 문서
