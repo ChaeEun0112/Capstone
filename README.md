@@ -8,9 +8,9 @@
 ![Concept](https://github.com/ChaeEun0112/Capstone/blob/main/Concept.jpg)
 ## 📑구성도
 ![Diagram](https://github.com/ChaeEun0112/Capstone/blob/main/Diagram.jpg)
-## 주요 기능
+## 🚗주요 기능
 ![Function](https://github.com/ChaeEun0112/Capstone/blob/main/Function.jpg)
-## 
+## 💻 
 
 ## 문서
 > Notion
