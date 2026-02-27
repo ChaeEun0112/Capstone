@@ -25,4 +25,5 @@ module.exports = mongoose.model('ultrasonic', ultrasonicSchema);
 /*
     Schema 클래스로 만들어진 개체를 가지고 Collection 생성하며, 외부 파일이나 모듈에서
     Schema 설계파일을 가지고 Collection에 접근할 수 있도록 한다.
+
 */
