@@ -1,4 +1,4 @@
-# 🚘스마트 주차 관리 시스템
+# 🚘스마트 주차 공간 모니터링 시스템
 > 캡스톤 개발 기간 : 2024.11 ~ 2024.12
 
 ![Capstone](https://github.com/ChaeEun0112/Capstone/blob/main/Capstone.jpg)
