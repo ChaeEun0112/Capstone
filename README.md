@@ -13,6 +13,7 @@ Arduino 센를 활용하여 주차 공간을 감지하고 웹에서 실시간으
 ## 🚗주요 기능
 ![Function](https://github.com/ChaeEun0112/Capstone/blob/main/Function.jpg)
 ## 🛠️기술 스택
+
 ## 💻동작 절차
 - Arduino
 ![Arduino](https://github.com/ChaeEun0112/Capstone/blob/main/Arduino.jpg)
