@@ -14,6 +14,13 @@ Arduino 센를 활용하여 주차 공간을 감지하고 웹에서 실시간으
 ![Function](https://github.com/ChaeEun0112/Capstone/blob/main/Function.jpg)
 ## 🛠️기술 스택
 
+| 구분          | 기술/도구        | 역할/설명                                   |
+|---------------|-----------------|--------------------------------------------|
+| Hardware      | Arduino          | 주차 공간 센서 데이터 수집 및 제어          |
+| Communication | MQTT             | 센서와 서버 간 실시간 데이터 통신           |
+| Backend       | Node.js          | 서버 구축, 데이터 처리 및 API 제공          |
+| Database      | MongoDB          | 센서 및 시스템 데이터 저장                  |
+| Frontend      | Web               | 실시간 주차 공간 확인 및 UI 구현             |
 ## 💻동작 절차
 - Arduino
 ![Arduino](https://github.com/ChaeEun0112/Capstone/blob/main/Arduino.jpg)
