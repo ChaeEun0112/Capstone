@@ -1,7 +1,7 @@
 # 🚘스마트 주차 공간 모니터링 시스템
 > 캡스톤 개발 기간 : 2024.11 ~ 2024.12
 
-Arduino 센를 활용하여 주차 공간을 감지하고 웹에서 실시간으로 확인할 수 있는 IoT 기반 주차 관리 시스템
+Arduino 센서를 활용하여 주차 공간을 감지하고 웹에서 실시간으로 확인할 수 있는 IoT 기반 주차 관리 시스템
 
 ![Capstone](https://github.com/ChaeEun0112/Capstone/blob/main/Capstone.jpg)
 ## 👩‍💻팀원
@@ -13,7 +13,6 @@ Arduino 센를 활용하여 주차 공간을 감지하고 웹에서 실시간으
 ## 🚗주요 기능
 ![Function](https://github.com/ChaeEun0112/Capstone/blob/main/Function.jpg)
 ## 🛠️기술 스택
-
 | 구분          | 기술/도구        | 역할/설명                                   |
 |---------------|-----------------|--------------------------------------------|
 | Hardware      | Arduino          | 주차 공간 센서 데이터 수집 및 제어          |
