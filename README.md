@@ -11,7 +11,7 @@
 ![Concept](https://github.com/ChaeEun0112/Capstone/blob/main/Concept.jpg)
 ## 📑시스템 구성도
 >
->**센서 → 서버 → 데이터베이스 → 웹 페이지**로 이어지는 IoT 기반 시스템 구조\
+>**센서 → 서버 → 데이터베이스 → 웹 페이지**로 이어지는 IoT 기반 시스템 구조
 
 ![Diagram](https://github.com/ChaeEun0112/Capstone/blob/main/Diagram.jpg)
 ## 🚗주요 기능
