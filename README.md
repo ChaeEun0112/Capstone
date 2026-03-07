@@ -10,7 +10,7 @@
 ## 💡개요
 ![Concept](https://github.com/ChaeEun0112/Capstone/blob/main/Concept.jpg)
 ## 📑시스템 구성도
-센서 → 서버 → 데이터베이스 → 웹 페이지로 이어지는 IoT 기반 시스템 구조
+**센서 → 서버 → 데이터베이스 → 웹 페이지**로 이어지는 IoT 기반 시스템 구조
 ![Diagram](https://github.com/ChaeEun0112/Capstone/blob/main/Diagram.jpg)
 ## 🚗주요 기능
 ![Function](https://github.com/ChaeEun0112/Capstone/blob/main/Function.jpg)
@@ -21,7 +21,7 @@
 | <div align="center">Communication</div> | <div align="center">MQTT  </div>           |<div align="center"> 센서와 서버 간 실시간 데이터 통신</div>           |
 | <div align="center">Backend </div>      | <div align="center">Node.js </div>         | <div align="center">서버 구축, 데이터 처리 및 API 제공 </div>         |
 | <div align="center">Database</div>      | <div align="center">MongoDB </div>         | <div align="center">센서 및 시스템 데이터 저장 </div>                 |
-| <div align="center">Frontend  </div>   |<div align="center"> Web  </div>            | <div align="center">실시간 주차 공간 확인 및 UI 구현 </div>            |
+| <div align="center">Frontend  </div>   |<div align="center"> HTML / CSS / JavaScript (Web UI)  </div>            | <div align="center">실시간 주차 공간 확인 및 UI 구현 </div>            |
 ## ⚙️시스템 동작 절차
 - Arduino
 주차 공간에 차량이 있는지 센서를 통해 감지
@@ -29,7 +29,7 @@
 - MQTT
 센서 데이터를 MQTT 프로토콜을 통해 서버로 전송
 ![MQTT](https://github.com/ChaeEun0112/Capstone/blob/main/MQTT.jpg)
-- Nodejs
+- Node.js
 서버에서 데이터를 처리하고 데이터베이스로 전달
 ![Nodejs](https://github.com/ChaeEun0112/Capstone/blob/main/Nodejs.jpg)
 - MongoDB
