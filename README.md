@@ -22,7 +22,7 @@
 | <div align="center">Backend </div>      | <div align="center">Node.js </div>         | <div align="center">서버 구축, 데이터 처리 및 API 제공 </div>         |
 | <div align="center">Database</div>      | <div align="center">MongoDB </div>         | <div align="center">센서 및 시스템 데이터 저장 </div>                 |
 | <div align="center">Frontend  </div>   |<div align="center"> Web  </div>            | <div align="center">실시간 주차 공간 확인 및 UI 구현 </div>            |
-## 💻동작 절차
+## ⚙️시스템 동작 절차
 - Arduino
 주차 공간에 차량이 있는지 센서를 통해 감지
 ![Arduino](https://github.com/ChaeEun0112/Capstone/blob/main/Arduino.jpg)
